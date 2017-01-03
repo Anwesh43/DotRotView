@@ -44,7 +44,7 @@ public class DotRotView extends View {
         if(event.getAction()  == MotionEvent.ACTION_DOWN) {
             clicked = true;
             ValueAnimator valueAnimator = ValueAnimator.ofFloat(0,360);
-            valueAnimator.setDuration(3000);
+            valueAnimator.setDuration(AppConstants.GAME_DELAY);
             valueAnimator.addUpdateListener(new AnimationUpdateAdapter());
             valueAnimator.addListener(new AnimationAdapter());
             valueAnimator.start();
