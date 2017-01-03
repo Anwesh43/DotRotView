@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Point;
 import android.hardware.display.DisplayManager;
 import android.view.Display;
+import android.view.View;
 import android.view.ViewGroup;
 
 /**
@@ -25,11 +26,12 @@ public class AddDotRotHelper {
             display.getRealSize(dimension);
         }
     }
-    public void addView() {
+    public void addView(View.OnClickListener onClickListener) {
         if(dimension!=null) {
             DotRotView dotRotView = new DotRotView(activity.getApplicationContext());
             dotRotView.setX(dimension.x / 2-dimension.x/8);
             dotRotView.setElevation(20);
+            dotRotView.setOnClickListener(onClickListener);
             activity.addContentView(dotRotView, new ViewGroup.LayoutParams(dimension.x / 4, dimension.x / 4));
         }
     }
